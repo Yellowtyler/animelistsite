@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Registration</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<!--    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">-->
+    <style>
+        body {
+            background-color: #3e3e3e;
+            color: white;
+        }
+
+                .alert {
+          padding: 20px;
+          background-color: #f44336;
+          color: white;
+          margin-bottom: 15px;
+          width:300px;
+        }
+
+       .form-group, .form-control {width : 100%;}
+
+       .error
+       {
+
+          background-color: #f44336;
+          color: white;
+
+       }
+
+       .btn
+       {
+         padding: 3px 20px;
+         font-size: 20px;
+         background-color:#134586
+       }
+
+       .center_div{
+            margin: 0 auto;
+            width:80% /* value of your choice which suits your alignment */
+        }
+
+        h2 {
+
+          color: #fff;
+          font-size: 21.5px;
+        }
+    </style>
+
+
+
+
+</head>
+
+
+<body>
+
+<div class="container h-100">
+<div class="row h-100 justify-content-center align-items-center" >
+<div class="col-10 col-md-8 col-lg-6">
+
+
+
+    <form id="myForm" class="form-reg" method="post" action="reg" onsubmit="return checkForm(this);">
+        <h2 class="form-reg-heading">Please register to AnimeList</h2>
+           <p></p>
+
+            <p>
+                <label for="username" class="sr-only">Username</label>
+                <input type="text" id="username" name="username" class="form-control w-50" placeholder="Username" autofocus=""  >
+                <p> <span class="error" th:text="${UserError}"></span> </p>
+            </p>
+
+            <div class="alert" id="UsernameError" style="display:none">
+            </div>
+
+
+
+             <p>
+            <label for="email" class="sr-only" >Email</label>
+            <input type="text" id="email" name="email" class="form-control w-50" placeholder="Email" >
+            <p> <span class="error" th:text="${EmailError}"></span> </p>
+             </p>
+
+            <div class="alert" id="EmailError" style="display:none">
+            </div>
+
+
+            <p>
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" id="password" name="password" class="form-control w-50" placeholder="Password" >
+            </p>
+
+            <div class="alert" id="PasswordError" style="display:none">
+            </div>
+
+
+
+            <p>
+                <label for="confirm_password" class="sr-only">Confirm password</label>
+                <input type="password" id="confirm_password" name="confirm_password" class="form-control w-50" placeholder="Confirm password" >
+            </p>
+
+            <div class="alert" id="NotMatchError" style="display:none">
+            </div>
+
+        <button class="btn btn-lg btn-primary btn-block w-50" type="submit" id="submit"  >Register</button>
+    </form>
+    <script type="text/javascript" src="../static/js/check.js" th:src="@{js/check.js}"></script>
+
+    <div class="backstretch"  style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height:900px; width: 1900px; z-index: -999999; position: fixed;">
+        <img src="../static/img/background1.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1566.22px; height: 881px; max-height: none; max-width: none; z-index: -999999; left: -200.611px; top: 0px;" th:src="@{img/background1.jpg}">
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>

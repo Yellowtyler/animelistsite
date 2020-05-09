@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>AnimeList login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #3e3e3e;
+            color: white;
+        }
+
+        .error {
+
+          background-color: #f44336;
+          color: white;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form class="form-signin" method="post" action="/login">
+        <h2 class="form-signin-heading">Please login to AnimeList</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+                   autofocus="">
+            <span class="error" th:text="${error}"></span> </p>
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                   required="">
+        </p>
+
+<!--        <div class="form-check">-->
+
+
+<!--            <label class="form-check-label" for="remember-me" style="margin-left: -19px;">  Remember me?</label>-->
+<!--            <input type="checkbox" class="form-check-input w-25" id="remember-me" style="margin-left: -15px;  vertical-align:top;">-->
+<!--        </div>-->
+<!--        <label><input id="remember-me" name="remember-me" value="remember" type="checkbox" style="margin-left:1px;"/> &nbsp;Remember me</label>-->
+       <p>
+        <tr>
+            <td >Remember me</td>
+            <td ><input type="checkbox" name="remember-me" id="remember-me" style="margin-left: 10px;"/></td>
+        </tr>
+       </p>
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+
+    <div class="backstretch"  style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height:900px; width: 1900px; z-index: -999999; position: fixed;">
+        <img src="../static/img/background1.jpg"   style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1566.22px; height: 881px; max-height: none; max-width: none; z-index: -999999; left: -200.611px; top: 0px;"  th:src="@{img/background1.jpg}">
+    </div>
+
+</div>
+</body>
+</html>
